@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="bntAppointment" minHeight="807.0" minWidth="1700.0" style="-fx-background-color: #eef6fb;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TableView fx:id="ReportsTVreport1" layoutX="9.0" layoutY="184.0" onSort="#handleAppointmentBnt" prefHeight="621.0" prefWidth="305.0" style="-fx-background-color: #e9e6e6;">
+        <columns>
+          <TableColumn fx:id="tvReportsAptCount" prefWidth="84.0" text="APT Count" />
+          <TableColumn fx:id="tvReportsAptType" prefWidth="83.33332824707031" text="Type" />
+            <TableColumn fx:id="tvReportsAptMonth" prefWidth="180.6666717529297" text="Month" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="83.0" prefHeight="61.0" prefWidth="1706.0" style="-fx-background-color: #2f88ed;">
+         <children>
+            <Label prefHeight="47.0" prefWidth="221.0" text="Reports" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="TabCustomers" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleCustomerBnt" prefHeight="64.0" prefWidth="207.0" text="Customers" textFill="#1799da">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="TabAppointments" mnemonicParsing="false" onAction="#handleAppointmentBnt" prefHeight="64.0" prefWidth="207.0" text="Appointments" textFill="#1799da">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="TabReports" mnemonicParsing="false" onAction="#handleReportBnt" prefHeight="64.0" prefWidth="207.0" text="Reports" textFill="#1799da">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="TabExit" mnemonicParsing="false" onAction="#confirmClose" prefHeight="64.0" prefWidth="207.0" text="Exit" textFill="#1799da">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <MenuBar prefHeight="29.0" prefWidth="1700.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Circle fill="DODGERBLUE" layoutX="281.0" layoutY="76.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.25">
+         <effect>
+            <Blend />
+         </effect>
+      </Circle>
+      <Circle fill="#f3ff06" layoutX="298.0" layoutY="71.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#f3ff06" layoutX="278.0" layoutY="76.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="76.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="281.0" layoutY="81.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#f3ff06" layoutX="294.0" layoutY="88.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Ellipse fill="#f3ff06" layoutX="293.0" layoutY="96.0" radiusX="5.0" radiusY="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Ellipse fill="#00ff63" layoutX="268.0" layoutY="45.0" radiusX="20.0" radiusY="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Ellipse fill="#00ff63" layoutX="274.0" layoutY="56.0" radiusX="44.0" radiusY="10.0" rotate="-26.6" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="WHITE" layoutX="301.0" layoutY="78.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="WHITE" layoutX="283.0" layoutY="83.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#c3b7b7" layoutX="294.0" layoutY="96.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <TableView fx:id="ReportsTVreport2" layoutX="318.0" layoutY="184.0" onSort="#handleAppointmentBnt" prefHeight="621.0" prefWidth="858.0" style="-fx-background-color: #e9e6e6;">
+         <columns>
+            <TableColumn fx:id="tvReportsContactID" prefWidth="83.33334350585938" text="Contact ID" />
+            <TableColumn fx:id="tvReportsAptID" prefWidth="73.66665649414062" text="APT ID" />
+            <TableColumn fx:id="tvReportsTitle" prefWidth="55.333343505859375" text="Title" />
+            <TableColumn fx:id="tvReportsType" prefWidth="69.0" text="Type" />
+            <TableColumn fx:id="tvReportsDescription" prefWidth="138.0" text="Description" />
+            <TableColumn fx:id="tvReportsStart" prefWidth="159.33331298828125" text="start" />
+            <TableColumn fx:id="tvReportsEnd" prefWidth="149.3333740234375" text="End" />
+            <TableColumn fx:id="tvReportsCustomerID" prefWidth="159.6666259765625" text="CustomerID" />
+         </columns>
+      </TableView>
+      <Label layoutX="1360.0" layoutY="154.0" prefHeight="15.0" prefWidth="276.0" text="Appointments per Month Chart" />
+      <Label layoutX="68.0" layoutY="154.0" prefHeight="15.0" prefWidth="276.0" text="Appointments By Type and Month" />
+      <BarChart fx:id="ReportsChart" layoutX="1183.0" layoutY="185.0" prefHeight="615.0" prefWidth="516.0" title="ReportsChart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label layoutX="662.0" layoutY="154.0" prefHeight="15.0" prefWidth="276.0" text="Contact Schedules" /> 
+   </children>
+</AnchorPane>

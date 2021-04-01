@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="807.0" minWidth="1700.0" style="-fx-background-color: #eef6fb;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox layoutX="3.0" layoutY="184.0" prefHeight="242.0" prefWidth="141.0" style="-fx-background-color: #e9e6e6;">
+         <children>
+            <Label fx:id="lbCustomerID" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="141.0" text="Customer ID">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbCustomerName" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="149.0" text="Customer Name">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbLastUpdatedBy1" layoutX="10.0" layoutY="285.0" prefHeight="33.0" prefWidth="149.0" text="Country">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbCustomerDivisionID" prefHeight="37.0" prefWidth="119.0" text="State/Province">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbCustomerAddress" layoutX="10.0" layoutY="43.0" prefHeight="33.0" prefWidth="149.0" text="Address">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbCusotomerPostalCode" layoutX="10.0" layoutY="76.0" prefHeight="33.0" prefWidth="149.0" text="Postal Code">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lbCustomerPhone" layoutX="10.0" layoutY="43.0" prefHeight="33.0" prefWidth="149.0" text="Phone">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="147.0" layoutY="184.0" prefHeight="242.0" prefWidth="164.0" style="-fx-background-color: #fae2a6;">
+         <children>
+            <TextField fx:id="tfCustomerID" editable="false" layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="129.0" promptText="Cust ID - Auto Gen" />
+            <TextField fx:id="tfCustomerName" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="129.0" promptText="Enter Customer Name" />
+            <ChoiceBox fx:id="choiceBoxCountry" prefHeight="37.0" prefWidth="164.0" />
+            <ChoiceBox fx:id="choiceBoxState" layoutX="10.0" layoutY="78.0" onMousePressed="#setStateChoice" prefHeight="37.0" prefWidth="164.0" />
+            <TextField fx:id="tfCustomerAddress" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="44.0" prefHeight="34.0" prefWidth="129.0" promptText="Ex:123 ABC Street, White Plains">
+               <font>
+                  <Font size="9.0" />
+               </font></TextField>
+            <TextField fx:id="tfCustomerZIP" layoutX="10.0" layoutY="78.0" prefHeight="34.0" prefWidth="129.0" promptText="Enter Customer ZIP" />
+            <TextField fx:id="tfCustomerPhone" layoutX="10.0" layoutY="112.0" prefHeight="34.0" prefWidth="129.0" promptText="Enter Customer Phone" />
+         </children>
+      </VBox>
+      <TableView fx:id="tableViewCustomer" layoutX="321.0" layoutY="184.0" prefHeight="703.0" prefWidth="1385.0" style="-fx-background-color: #e9e6e6;">
+        <columns>
+          <TableColumn fx:id="tvCustomerID" prefWidth="39.0" text="ID" />
+          <TableColumn fx:id="tvCustomerName" prefWidth="176.0" text="Name" />
+            <TableColumn fx:id="tvCustomerAddress" prefWidth="132.0" text="Address" />
+            <TableColumn fx:id="tvCustomerDivID" prefWidth="223.0" text="State / Country" />
+            <TableColumn fx:id="tvCustomerZIP" minWidth="0.0" prefWidth="71.0" text="ZIP" />
+            <TableColumn fx:id="tvCustomerPhone" minWidth="0.0" prefWidth="146.0" text="Phone #" />
+            <TableColumn fx:id="tvCustomerCreate" prefWidth="144.0" text="Create Date" />
+            <TableColumn fx:id="tvCustomerCreateBy" prefWidth="132.0" text="Created  By" />
+            <TableColumn fx:id="tvCustomerUpdated" prefWidth="222.0" text="Updated" />
+            <TableColumn fx:id="tvCustomerUpdatedBy" minWidth="0.0" prefWidth="99.0" text="Updated By" />
+        </columns>
+      </TableView>
+      <Button fx:id="btCustomerInsert" layoutX="54.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#insertCustomerInformation" prefHeight="25.0" prefWidth="68.0" text="Add" />
+      <Button fx:id="btCustomerUpdate" layoutX="144.0" layoutY="572.0" mnemonicParsing="false" onMouseClicked="#setCostumerInformationInForm2Update" prefHeight="25.0" prefWidth="68.0" text="Modify" />
+      <Button fx:id="btCustomerDelete" layoutX="232.0" layoutY="572.0" mnemonicParsing="false" onAction="#deleteCustomerInformation" prefHeight="25.0" prefWidth="68.0" text="Delete" />
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="83.0" prefHeight="61.0" prefWidth="1706.0" style="-fx-background-color: #2f88ed;">
+         <children>
+            <Label prefHeight="47.0" prefWidth="221.0" text="Customers" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="TabCustomers" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleCustomerBnt" prefHeight="64.0" prefWidth="207.0" text="Customers" textFill="#1799da">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="TabAppointments" mnemonicParsing="false" onAction="#handleAppointmentBnt" prefHeight="64.0" prefWidth="207.0" text="Appointments" textFill="#1799da">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="TabReports" mnemonicParsing="false" onAction="#handleReportBnt" prefHeight="64.0" prefWidth="207.0" text="Reports" textFill="#1799da">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="TabExit" mnemonicParsing="false" onAction="#confirmClose" prefHeight="64.0" prefWidth="207.0" text="Exit" textFill="#1799da">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <MenuBar prefHeight="29.0" prefWidth="1700.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuFileClose" mnemonicParsing="false" onAction="#confirmClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Circle fill="DODGERBLUE" layoutX="281.0" layoutY="76.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.25">
+         <effect>
+            <Blend />
+         </effect></Circle>
+      <Circle fill="#f3ff06" layoutX="278.0" layoutY="76.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#f3ff06" layoutX="298.0" layoutY="71.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="281.0" layoutY="81.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="76.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="#f3ff06" layoutX="294.0" layoutY="88.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Ellipse fill="#f3ff06" layoutX="293.0" layoutY="96.0" radiusX="5.0" radiusY="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Button fx:id="btCustomerSave" layoutX="92.0" layoutY="624.0" mnemonicParsing="false" onAction="#modifyCustomerInformation" prefHeight="25.0" prefWidth="173.0" text="Save Modification" />
+      <Ellipse fill="RED" layoutX="276.0" layoutY="56.0" radiusX="44.0" radiusY="10.0" rotate="-24.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Ellipse fill="RED" layoutX="268.0" layoutY="46.0" radiusX="17.0" radiusY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="WHITE" layoutX="284.0" layoutY="83.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fill="WHITE" layoutX="300.0" layoutY="80.0" radius="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
